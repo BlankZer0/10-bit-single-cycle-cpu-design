@@ -1,0 +1,6 @@
+add $s1, $s2
+sub $s1, $s2
+jeq $s1, #7
+adda $s1, $s2
+lda #63
+add $zero, $acc

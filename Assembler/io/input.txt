@@ -1,6 +1,6 @@
 add $s1, $s2
 sub $s1, $s2
-jeq $s1, #7
+jeq $s1, #0
 adda $s1, $s2
-lda #63
+lda #7
 add $zero, $acc

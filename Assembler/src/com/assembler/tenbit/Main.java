@@ -44,7 +44,10 @@ public class Main
                     {
                         String binary = convertToBin.getBinary(s);
                         int decimal = Integer.parseInt(binary, 2);
-                        String hexaDecimal = Integer.toHexString(decimal);
+                        String hexaDecimal = Integer.toHexString(decimal).toUpperCase();
+
+                        while (hexaDecimal.length() < 3)
+                            hexaDecimal = "0".concat(hexaDecimal);
 
                         binaryInstruction.add(binary);
                         hexInstruction.add(hexaDecimal);

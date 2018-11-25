@@ -36,7 +36,7 @@ final class Operands
             this.operand = "invalid";
     }
 
-    public String getOperand()
+    String getOperand()
     {
         return operand;
     }

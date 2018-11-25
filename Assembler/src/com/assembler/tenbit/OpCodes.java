@@ -123,12 +123,12 @@ final class OpCodes
         }
     }
 
-    public String getOpCode()
+    String getOpCode()
     {
         return opCode;
     }
 
-    public char getType()
+    char getType()
     {
         return type;
     }

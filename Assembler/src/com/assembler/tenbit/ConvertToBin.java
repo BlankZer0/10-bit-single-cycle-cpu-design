@@ -91,7 +91,14 @@ class ConvertToBin
             if (immediate < 0 || immediate > 7)
                 return "invalid";
             else
-                output.append(Integer.toBinaryString(immediate));
+            {
+                String binString = Integer.toBinaryString(immediate);
+
+                while (binString.length() <3)
+                    binString = "0".concat(binString);
+
+                output.append(binString);
+            }
         }
 
         // Perform this for JC-Type Operations
@@ -108,7 +115,14 @@ class ConvertToBin
             if (immediate < 0 || immediate > 63)
                 return "invalid";
             else
-                output.append(Integer.toBinaryString(immediate));
+            {
+                String binString = Integer.toBinaryString(immediate);
+
+                while (binString.length() <6)
+                    binString = "0".concat(binString);
+
+                output.append(binString);
+            }
         }
 
         return output.toString();

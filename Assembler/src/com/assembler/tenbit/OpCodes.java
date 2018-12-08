@@ -9,19 +9,19 @@ final class OpCodes
     private static final String OR   = "0011";
     private static final String NOR  = "0100";
     private static final String MOV  = "0101";
+    private static final String STA  = "0110";
+    private static final String IN   = "0111";
+    private static final String OUT  = "1000";
 
     // IB-Type Defined
-    private static final String ADDI = "0110";
-    private static final String MOVI = "0111";
-    private static final String JEQ  = "1000";
-    private static final String JNE  = "1001";
-    private static final String JLT  = "1010";
+    private static final String ADDI = "1001";
+    private static final String MOVI = "1010";
+    private static final String JEQ  = "1011";
+    private static final String JNE  = "1100";
+    private static final String JLT  = "1101";
 
-    // JC-Type Defined
-    private static final String LDA  = "1011";
-    private static final String STA  = "1100";
-    private static final String IN   = "1101";
-    private static final String OUT  = "1110";
+    // JL-Type Defined
+    private static final String LDA  = "1110";
     private static final String JMP  = "1111";
 
     private String opCode;
@@ -29,7 +29,7 @@ final class OpCodes
 
     OpCodes(String opCode)
     {
-        // Check for RA-Type
+        // Check for RA-Type (9 operations)
         if (opCode.equals("add"))
         {
             this.opCode = ADD;
@@ -60,9 +60,24 @@ final class OpCodes
             this.opCode = MOV;
             this.type = 'R';
         }
+        else if (opCode.equals("sta"))
+        {
+            this.opCode = STA;
+            this.type = 'R';
+        }
+        else if (opCode.equals("in"))
+        {
+            this.opCode = IN;
+            this.type = 'R';
+        }
+        else if (opCode.equals("out"))
+        {
+            this.opCode = OUT;
+            this.type = 'R';
+        }
 
 
-        //Check for IB-Type
+        //Check for IB-Type (5 operations)
         else if (opCode.equals("addi"))
         {
             this.opCode = ADDI;
@@ -90,25 +105,10 @@ final class OpCodes
         }
 
 
-        // Check for JC-Type
+        // Check for JL-Type (2 operations)
         else if (opCode.equals("lda"))
         {
             this.opCode = LDA;
-            this.type = 'J';
-        }
-        else if (opCode.equals("sta"))
-        {
-            this.opCode = STA;
-            this.type = 'J';
-        }
-        else if (opCode.equals("in"))
-        {
-            this.opCode = IN;
-            this.type = 'J';
-        }
-        else if (opCode.equals("out"))
-        {
-            this.opCode = OUT;
             this.type = 'J';
         }
         else if (opCode.equals("jmp"))

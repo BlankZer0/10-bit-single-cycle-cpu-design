@@ -8,7 +8,7 @@ final class Operands
     private static final String S2   = "011";
     private static final String T0   = "100";
     private static final String T1   = "101";
-    private static final String T2   = "110";
+    private static final String IO   = "110";
     private static final String ACC  = "111";
 
     private String operand;
@@ -27,8 +27,8 @@ final class Operands
             this.operand = T0;
         else if (operand.equals("$t1"))
             this.operand = T1;
-        else if (operand.equals("$t2"))
-            this.operand = T2;
+        else if (operand.equals("$io"))
+            this.operand = IO;
         else if (operand.equals("$acc"))
             this.operand = ACC;
 

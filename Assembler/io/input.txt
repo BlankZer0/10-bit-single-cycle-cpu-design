@@ -3,4 +3,8 @@ sub $s1, $s2
 jeq $s1, #0
 adda $s1, $s2
 lda #7
+in $io
 add $zero, $acc
+out $IO
+sta $t1
+jmp #6

@@ -1,6 +1,10 @@
 013
 053
-210
+2D0
 Invalid Instruction
-2C7
+387
+1F6
 007
+236
+1AE
+3C6

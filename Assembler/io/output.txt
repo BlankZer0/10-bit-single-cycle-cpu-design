@@ -1,10 +1,19 @@
-add $s1, $s2
-sub $s1, $s2
-jeq $s1, #0
-adda $s1, $s2
-lda #7
-in $io
-add $zero, $acc
-out $IO
-sta $t1
-jmp #6
+addi $s0, #2
+mov $s1, $acc
+add $s1, $acc
+sub $acc, $s1
+movi $t0, #5
+sta $t0, #3
+lda $t1, #0
+movi $s0, #1
+and $s0, $zero
+or $s0, $zero
+nor $s0, $zero
+out $io
+lda $t0, #3
+jeq $s1, #2
+lda $t0, #3
+movi $acc, #7
+jlt $t0, #5
+jne $io, #4
+jmp #0

@@ -103,6 +103,8 @@ class ConvertToBin
             else
                 output.append(operands.getOperand());
 
+            if (parts.length < 2)
+                return "invalid";
             // Get the second operand and covert it into lowercase after trimming extra spaces
             secondOperand = parts[1];
             secondOperand = secondOperand.toLowerCase();
@@ -137,7 +139,7 @@ class ConvertToBin
             }
         }
 
-        // Perform this for JL-Type Operations
+        // Perform this for J-Type Operations
         if (opCodes.getType() == 'J')
         {
             // Check if the second operand starts with the constant sign (#)
